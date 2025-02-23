@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .in{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50vh;
+        width: 100%;
+      }
+    .inputs{
+      width: 100%;
+      height: 25vh;
+      display: grid;
+      grid-template-columns: 300px 300px;
+      gap: 5rem;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    
+    .input_ {
+      height: 4rem;
+      width: 100%;
+      background-color:#262626 ;
+      border-radius: 2rem;
+      text-align:center ;
+      border-style: none;
+      
+    }
+    input{
+
+      color: white;
+    }
+    .buttons{
+      width: 15%;
+      height: 3rem;
+      border-radius: 2rem;
+      color: grey;
+      border-style: none;
+
+    }
+    
+    .frm_class{
+      display: flex;
+      flex-direction: column;
+      height:40vh;
+      width: auto;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .form_button{
+      width: 50%;
+      height: 5rem;
+      border-radius: 2rem;
+      color: grey;
+      display: contents;
+      align-items: center;
+    }
+    .form_button button{
+      width: 30%;
+      height: 3rem;
+      color: gray;
+      border-radius: 2rem;
+      border-style: none;
+    }
+
+    </style>
+    
+    <div class="container">
+      <div class="nav_img">
+        <div class="navbar">
+          <div class="images">
+            <img src="/images/shape-30.png" alt="hexagon" />
+            <h2>your bank</h2>
+          </div>
+          <div class="links">
+            <div class="hover">
+              <a href="/landing_page.html">home</a>
+            </div>
+            <div class="hover">
+              <a href="">careers</a>
+            </div>
+            <div class="hover">
+              <a href="">about</a>
+            </div>
+            <div class="hover">
+              <a href="/security.html">security</a>
+            </div>
+          </div>
+          <div class="sign_login">
+            <div class="hover">
+              <a href="/sign_up.html">sign UP</a>
+            </div>
+
+            <a href=""><button class="login">Login</button></a>
+          </div>
+        </div>
+      </div>
+      <!-- this is hero part -->
+      <div class="second_hero">
+        <div class="isolate">
+          <div class="header_">
+            <img src="/images/Text Container (3).svg" alt="">
+            </div>
+            <div class="in">
+             <div id="frm" class="frm_class">
+              <div class="inputs">
+             
+              <input  id="email" type="email" name="email" class="input_"  placeholder="ENTER email">
+              <input  id="password" type="password" name="password" class="input_"  placeholder="ENTER password">
+              
+              </div>
+              <a href="">
+                <img src="/images/Text Button.svg" alt="">
+              </a>
+              <div class="form_button">
+              <button id="sign"  onclick="check()" style="background-color: #CAFF33;">login</button>
+              <span id="login" class="span">you are logged in </span>
+
+              </div>
+            </div>
+              <button class="buttons" onclick="window.location.href = 'login.html'  " style="background-color: #262626;">sign in </button>
+             </div>
+             
+            <div class="img">
+                <img src="/images/Container.svg" alt="">
+            </div>
+            <div class="bttm_links">
+                <img src="/images/Icon Container (4).svg" alt="">
+                <img src="/images/Icon Container (5).svg" alt="">
+                <img src="/images/Icon Container (6).svg" alt="">
+            </div>
+            </div>
+           
+        </div>
+      </div>
+
+      
+    </div>
+  </body>
+  <script src="login.js">
+        
+  </script>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/darkmode/css.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>login</h1>
+    <style>
+        .mystyle{
+            background-color: black;
+            width: 5rem;
+            height: 2rem;
+        }
+        .temp{
+            background-color: white;
+            color: white;
+            border: color=white;
+            border-style: none;
+        }
+    </style>
+    
+       username <input id="u"  type="text" name="username" id="">
+       <br>
+       <br>
+        password<input id="pass" type="password" name="" id="">
+        <br>
+        <br>
+        <button onclick="check() " type="submit">login</button>
+        <button id="if"  class="temp" type="submit  " onclick="window.location.href = 'data.html'  ">next page</button>
+        
+        <button id="il"  class="temp" type="submit  " onclick="window.location.href = 'index.html'  ">home page</button>
+        
+    </form>
+
+</body>
+<script >
+function check(){
+let x=document.getElementById("u").value;
+let y=document.getElementById("pass").value;
+console.log(x);
+console.log(y);
+let array=JSON.parse(localStorage.getItem('local'));
+let c=0;
+let c1=0;
+console.log(array);
+for(let z of array){
+    console.log(z);
+    if((z.Username)==x && (z.password==y)){
+    console.log("you are loged in");
+    document.getElementById('if').classList.remove("temp");
+    document.getElementById('if').classList.add("mystyle");
+    document.getElementById('il').classList.remove("temp");
+    document.getElementById('il').classList.add("mystyle");
+    console.log("element found at"+c);
+    c1=1;
+    break;
+    }
+    c++;
+}
+if(c1==0){
+    alert("the person is not found");
+}
+
+localStorage.setItem("match",JSON.stringify(c));
+}
+
+</script>
+
+</html> -->

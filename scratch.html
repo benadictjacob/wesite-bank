@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .card {
+            width: 30vh;
+            height: 60vh;
+            position: relative;
+            box-shadow: 1px 2px 6px rgba(0, 0, 0, 0);
+        }
+        .base, #scratch {
+            cursor: default;
+            height: 60vh;
+            width: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: grabbing;
+        }
+        .base {
+            line-height: 60vh;
+            text-align: center;
+        }
+        #scratch {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+        
+    </style>
+    
+    <div class="card">
+        <div class="base">better luck NEXT time</div>
+        <canvas id="scratch" width="300" height="60"></canvas>
+    </div>
+    
+</body>
+<script>
+    // scratch-card.js
+const canvas = document.getElementById('scratch');
+const ctx = canvas.getContext('2d');
+
+// Draw the gray layer (initially covering the entire canvas)oooooi
+ctx.fillStyle = ' blue';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// Add event listeners to handle scratching
+canvas.addEventListener('mousemove', handleScratch);
+//canvas.addEventListener('touchmove', handleScratch);
+
+function handleScratch(e) {
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // Clear the scratched area
+    ctx.clearRect(x - 25, y - 25, 30, 30);
+}
+
+</script>
+</html>
